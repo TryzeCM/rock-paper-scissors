@@ -1,7 +1,8 @@
+//Global Variables
 const playerSelection = getPlayerChoice();
 const computerSelection = computerPlay();
 
-//Convert the random number to a usable string
+//Convert the random Number to a usable String
 function computerPlay() {
     let choice = random(3);
 
@@ -26,9 +27,18 @@ function getPlayerChoice() {
     let choice = prompt("Rock-Paper-Scissors?"); 
     return choice;
 }
+
 //Convert the Input to Uppercase for case insensitivity
 function convertPlayerChoice(choice) {
     return choice.toUpperCase();
+}
+
+//Check if the Input is the expected Input
+function checkPlayerChoice(choice) {
+    if (choice == "ROCK" || choice == "PAPER" || choice == "SCISSORS") {
+        return true;
+    } 
+    return false;
 }
 
 //Get a random Value
