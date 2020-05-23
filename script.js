@@ -1,6 +1,7 @@
 //Global Variables
-const playerSelection = getPlayerChoice();
+const playerSelection = convertPlayerChoice(getPlayerChoice());
 const computerSelection = computerPlay();
+
 
 //Convert the random Number to a usable String
 function computerPlay() {
@@ -47,7 +48,24 @@ function random(value) {
 }
 
 function playRound(playerSelection, computerSelection) {
+
+    if (checkPlayerChoice(playerSelection)){
+
+        if (playerSelection == computerSelection) {
+            alert("It's a DRAW!");
+        } else if ( playerSelection == "ROCK" && computerSelection == "SCISSORS" ||
+                    playerSelection == "PAPER" && computerSelection == "ROCK" ||
+                    playerSelection == "SCISSORS" && computerSelection == "PAPER") {
+            alert("You WIN!");
+        } else {
+            alert("You lose.");
+        }
+    } else {
+        alert("INVALID INPUT");
+    }
     
 }
 
+playRound(playerSelection, computerSelection);
 console.log(playerSelection);
+console.log(computerSelection);
