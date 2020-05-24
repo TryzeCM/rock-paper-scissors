@@ -1,6 +1,28 @@
+let playerPoints = 0;
+let computerPoints = 0;
+
 // The Game
-const playerSelection = convertPlayerChoice(getPlayerChoice());
-const computerSelection = computerPlay();
+
+
+for (; playerPoints < 5 || computerPoints < 5 ;) {
+    let playerSelection = convertPlayerChoice(getPlayerChoice());
+    let computerSelection = computerPlay();
+    console.log(`P: ${playerPoints} : ${computerPoints} :C`);
+
+    if (playRound(playerSelection, computerselection)) {
+        playerPoints++;
+        console.log(playerPoints);
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 //Convert the random Number to a usable String
@@ -54,15 +76,20 @@ function playRound(playerSelection, computerSelection) {
 
         if (playerSelection == computerSelection) {
             alert("It's a DRAW!");
+            return undefined;
+
         } else if ( playerSelection == "ROCK" && computerSelection == "SCISSORS" ||
                     playerSelection == "PAPER" && computerSelection == "ROCK" ||
                     playerSelection == "SCISSORS" && computerSelection == "PAPER") {
             alert("You WIN!");
+            return true;
         } else {
             alert("You lose.");
+            return false;
         }
     } else {
         alert("INVALID INPUT");
+        return undefined;
     }
     
 }
