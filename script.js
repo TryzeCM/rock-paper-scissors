@@ -1,5 +1,11 @@
-let playerPoints = 0;
-let computerPoints = 0;
+/************************************************TO DO************************************************
+ * -fix if statement with function calls for playRound
+ * -put win conditions in seperate function
+ * -put for loop in function playRound
+*/
+
+let playerPoints = 4;
+let computerPoints = 4;
 
 // The Game
 
@@ -9,9 +15,14 @@ for (; playerPoints < 5 || computerPoints < 5 ;) {
     let computerSelection = computerPlay();
     console.log(`P: ${playerPoints} : ${computerPoints} :C`);
 
-    if (playRound(playerSelection, computerselection)) {
+    if (playRound(playerSelection, computerSelection)) {
         playerPoints++;
         console.log(playerPoints);
+    } else if (playRound(playerSelection, computerSelection) == undefined) {
+        console.log(`Draw: ${undefined}`);
+    } else {
+        computerPoints++;
+        console.log(`Computer: ${computerPoints}`)
     }
 }
 
