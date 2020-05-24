@@ -1,4 +1,4 @@
-//Global Variables
+// The Game
 const playerSelection = convertPlayerChoice(getPlayerChoice());
 const computerSelection = computerPlay();
 
@@ -47,6 +47,7 @@ function random(value) {
     return Math.floor(Math.random() * Math.floor(value));
 }
 
+//Evaluates if the Player WINS, LOSES or if it's a DRAW
 function playRound(playerSelection, computerSelection) {
 
     if (checkPlayerChoice(playerSelection)){
