@@ -2,23 +2,33 @@
  * 
 */
 
-let playerPoints = 0;
-let computerPoints = 0;
+//Global Variables
+let playerPoints = 4;
+let computerPoints = 4;
+let score = document.getElementById("score");
+
+//Initialise Score on Page
+score.innerText = `Player ${playerPoints} : ${computerPoints} Computer`;
 
 // The Game
 
 function game() {
-    while (playerPoints < 5 ) {
+    
+
+    while (playerPoints < 5 && computerPoints < 5 ) {
+        
         let playerSelection = convertPlayerChoice(getPlayerChoice());
         let computerSelection = computerPlay();
 
         playRound(playerSelection, computerSelection);
-        console.log(`P: ${playerPoints}\n C: ${computerPoints}`);
+        updateScore(playerPoints, computerPoints);
     }
         
 }
 
-
+function updateScore(pPoints, cPoints) {
+    score.innerText = `Player ${pPoints} : ${cPoints} Computer`;
+}
 
 
 
