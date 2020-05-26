@@ -1,32 +1,22 @@
 /************************************************TO DO************************************************
- * -fix if statement with function calls for playRound
- * -put win conditions in seperate function
- * -put for loop in function playRound
+ * 
 */
 
-let playerPoints = 4;
-let computerPoints = 4;
+let playerPoints = 0;
+let computerPoints = 0;
 
 // The Game
 
+function game() {
+    while (playerPoints < 5 ) {
+        let playerSelection = convertPlayerChoice(getPlayerChoice());
+        let computerSelection = computerPlay();
 
-for (; playerPoints < 5 || computerPoints < 5 ;) {
-    let playerSelection = convertPlayerChoice(getPlayerChoice());
-    let computerSelection = computerPlay();
-    console.log(`P: ${playerPoints} : ${computerPoints} :C`);
-
-    if (playRound(playerSelection, computerSelection)) {
-        playerPoints++;
-        console.log(playerPoints);
-    } else if (playRound(playerSelection, computerSelection) == undefined) {
-        console.log(`Draw: ${undefined}`);
-    } else {
-        computerPoints++;
-        console.log(`Computer: ${computerPoints}`)
+        playRound(playerSelection, computerSelection);
+        console.log(`P: ${playerPoints}\n C: ${computerPoints}`);
     }
+        
 }
-
-
 
 
 
@@ -93,10 +83,10 @@ function playRound(playerSelection, computerSelection) {
                     playerSelection == "PAPER" && computerSelection == "ROCK" ||
                     playerSelection == "SCISSORS" && computerSelection == "PAPER") {
             alert("You WIN!");
-            return true;
+            return playerPoints++;
         } else {
             alert("You lose.");
-            return false;
+            return computerPoints++;
         }
     } else {
         alert("INVALID INPUT");
@@ -105,6 +95,5 @@ function playRound(playerSelection, computerSelection) {
     
 }
 
-playRound(playerSelection, computerSelection);
-console.log(playerSelection);
-console.log(computerSelection);
+game();
+
