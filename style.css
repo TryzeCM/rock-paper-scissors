@@ -1,0 +1,53 @@
+body { 
+    background: linear-gradient(210deg,#ffd5e5, #ffffdd, #a0ffe6, #81f5ff);
+    background-repeat: no-repeat;
+    height: 100%;
+    background-attachment: fixed;
+}
+#score {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Roboto', sans-serif;
+} 
+
+#text-box {
+    padding: 20px;
+}
+
+#log {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#buttons-div {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    background: linear-gradient(210deg,#ffd5e5, #a0ffe6);
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: none;
+    top: 50px;
+    margin: 5px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    background-color: purple;
+    color: white;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px black;
+}
+
+.btn:hover {
+     box-shadow: 1px 2px 3px #0000004a;
+     background: linear-gradient(210deg,#ffa8f5, #86ffff);
+}
+
+.text {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
